@@ -3,207 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.: TucoT9's Lair :.</title>
+    <title>TucoT9 │ German Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Willkommen im CSS-Fegefeuer */
+        :root {
+            --background-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-text-color: #e0e0e0;
+            --secondary-text-color: #a0a0a0;
+            --accent-color: #3d8bfd;
+            --border-color: #2c2c2c;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #000000;
-            color: #00FF00; /* Leuchtendes Grün */
-            font-family: 'Courier New', Courier, monospace;
-            background-image: url('https://i.gifer.com/origin/f5/f59c4d96a7a810618b7654a9c80a2569_w200.gif'); /* Matrix Hintergrund */
-            background-repeat: repeat;
-            cursor: crosshair;
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            width: 800px;
-            margin: 20px auto;
-            border: 3px double #FF0000;
-            padding: 15px;
-            background-color: rgba(10, 10, 10, 0.85); /* Leicht durchsichtig, damit man den Hintergrund sieht */
-            box-shadow: 0 0 20px #FF0000;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        h1, h2, h3 {
-            color: #FF0000; /* Aggressives Rot für Überschriften */
-            text-shadow: 0 0 5px #FF4500;
-            text-transform: uppercase;
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-text-color);
+            margin-top: 10px;
+        }
+        
+        header .profile-badges {
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        nav.social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        nav.social-links a img {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        nav.social-links a:hover img {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-text-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 30px;
         }
 
         a {
-            color: #00FFFF; /* Cyan-Links */
+            color: var(--accent-color);
             text-decoration: none;
-            font-weight: bold;
+            transition: color 0.2s ease;
         }
+
         a:hover {
-            color: #FFFFFF;
             text-decoration: underline;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0));
-        }
-
-        img {
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-            margin: 5px;
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
         }
         
-        /* Der glorreiche Blink-Tag, wiedergeboren in CSS */
-        @keyframes blink-animation {
-            50% { opacity: 0; }
-        }
-        .blink {
-            animation: blink-animation 1s step-start infinite;
-            color: #FFFF00; /* Warn-Gelb */
-            font-size: 1.2em;
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
-        .project-box {
-            border: 1px dashed #00FFFF;
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: #111;
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
+        
+        .card .links {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        .card .links a {
+            margin-right: 15px;
+        }
+        
+        .tech-stack-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-stack-category {
+            margin-bottom: 20px;
+        }
+        
+        .tech-stack-category strong {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--secondary-text-color);
+        }
+
+        .github-stats-container {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .github-stats-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: var(--secondary-text-color);
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
 
-<audio autoplay loop>
-  <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-  Dein Browser ist zu modern für Hintergrundmusik. Schade.
-</audio>
+    <div class="container">
 
-<div class="container">
-    <center>
-        <img src="https://i.gifer.com/7aJ3.gif" alt="Spinning Skull" width="100">
-        <marquee behavior="alternate" scrollamount="10">
-            <h1>!!! Willkommen im Cyberspace von TucoT9 !!!</h1>
-        </marquee>
-        <p class="blink">German Developer │ AI Specialist │ Cybersecurity Expert</p>
-        <p>
-          <a href="https://github.com/T9Tuco"><img src="https://komarev.com/ghpvc/?username=T9Tuco&color=4c566a&style=for-the-badge" alt="Profile Views"/></a>
-          <a href="https://github.com/T9Tuco?tab=followers"><img src="https://img.shields.io/github/followers/T9Tuco?style=for-the-badge&color=4c566a&logo=github" alt="GitHub Followers"/></a>
-        </p>
-    </center>
-    
-    <hr>
+        <header>
+            <h1>TucoT9</h1>
+            <p class="subtitle">German Developer │ AI Specialist │ Cybersecurity Expert</p>
+            <div class="profile-badges">
+                <a href="https://github.com/T9Tuco"><img src="https://komarev.com/ghpvc/?username=T9Tuco&color=4c566a&style=for-the-badge" alt="Profile Views"/></a>
+                <a href="https://github.com/T9Tuco?tab=followers"><img src="https://img.shields.io/github/followers/T9Tuco?style=for-the-badge&color=4c566a&logo=github" alt="GitHub Followers"/></a>
+            </div>
+            <nav class="social-links">
+                <a href="https://github.com/T9Tuco"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+                <a href="https://discord.com/users/718832241127718915"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/></a>
+                <a href="https://tucot9.com/"><img src="https://img.shields.io/badge/Website-4c566a?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/></a>
+            </nav>
+        </header>
 
-    <h3>>> About Me_</h3>
-    <p>
-      Ich bin ein Entwickler aus Deutschland, spezialisiert auf <b>Artificial Intelligence</b>, <b>Automation</b> und <b>Cybersecurity</b>.
-      <br><br>
-      Als Mitentwickler von <b>NexusNG</b> und <b>CoreHub.lol</b> sowie Mitglied der <b>T9 Group</b> (<a href="https://t9.rocks">t9.rocks</a>), arbeite ich mit anderen ethischen Hackern zusammen, um komplexe Herausforderungen in der digitalen Sicherheit zu meistern. Mein Ziel ist es, robuste, intelligente und wertvolle Softwarelösungen zu schaffen.
-    </p>
+        <main>
+            <section id="about">
+                <h2>Über Mich</h2>
+                <p>
+                    Ich bin ein Entwickler aus Deutschland, spezialisiert auf die Bereiche <strong>Künstliche Intelligenz</strong>, <strong>Automatisierung</strong> und <strong>Cybersecurity</strong>.
+                    Als Mitentwickler von <a href="https://nexusng.site/">NexusNG</a> und <a href="https://corehub.lol/">CoreHub.lol</a> sowie als Mitglied der <a href="https://t9.rocks">T9 Group</a>, kollaboriere ich mit anderen ethischen Hackern, um komplexe Herausforderungen in der digitalen Sicherheit zu meistern. Mein Ziel ist es, robuste, intelligente und wertvolle Softwarelösungen zu schaffen.
+                </p>
+            </section>
 
-    <hr>
-    
-    <h3>>> Featured Projects_</h3>
-    
-    <div class="project-box">
-        <h4>[CoreHub.lol]</h4>
-        <p>
-            Ein Open-Source-Hub für Entwickler und Unternehmen, der hochwertige Projektbasen zur Beschleunigung der Entwicklung und zur Förderung von Innovationen bereitstellt. Ich bin ein aktiver Contributor für viele der dort gehosteten Projekte.
-        </p>
-        <p><b>Links:</b> <a href="https://corehub.lol/">Website</a> │ <a href="https://github.com/corehub-lol">GitHub</a></p>
+            <section id="projects">
+                <h2>Featured Projects</h2>
+                <div class="card">
+                    <h3>CoreHub.lol</h3>
+                    <p>Ein Open-Source-Hub für Entwickler und Unternehmen, der hochwertige Projektbasen zur Beschleunigung der Entwicklung und zur Förderung von Innovationen bereitstellt. Ich bin ein aktiver Contributor für viele der dort gehosteten Projekte.</p>
+                    <div class="links">
+                        <a href="https://corehub.lol/" target="_blank">Website</a>
+                        <a href="https://github.com/corehub-lol" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>NexusNG</h3>
+                    <p>Ein fortschrittlicher KI-Assistent, der entwickelt wurde, um den Softwareentwicklungs-Workflow mithilfe modernster Natural Language Processing und Machine Learning zu optimieren.</p>
+                    <div class="links">
+                        <a href="https://nexusng.site/" target="_blank">Website</a>
+                        <a href="https://nexusng.de/" target="_blank">Chat App</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>SignalVoid</h3>
+                    <p>Ein Open-Source-Hardwareprojekt zur Schaffung eines vielseitigen, tragbaren Werkzeugs für die Sicherheitsforschung, entwickelt mit benutzerdefinierter Hardware und Firmware für erweiterte HF-Analyse, RFID/NFC und Infrarot-Kommunikation.</p>
+                    <div class="links">
+                        <a href="https://signalvoid.org/" target="_blank">Website</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="card">
+                    <div class="tech-stack-category">
+                        <strong>Languages</strong>
+                        <div class="tech-stack-grid">
+                            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+                            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+                            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+                            <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java"/>
+                            <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"/>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <strong>Frontend</strong>
+                        <div class="tech-stack-grid">
+                            <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+                            <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
+                            <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js"/>
+                            <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
+                        </div>
+                    </div>
+                     <div class="tech-stack-category">
+                        <strong>Backend</strong>
+                        <div class="tech-stack-grid">
+                            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+                            <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
+                            <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+                            <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot"/>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <strong>AI & Machine Learning</strong>
+                        <div class="tech-stack-grid">
+                            <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
+                            <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
+                            <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <strong>DevOps & Cloud</strong>
+                        <div class="tech-stack-grid">
+                           <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+                           <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
+                           <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+                           <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="stats">
+                <h2>GitHub Stats</h2>
+                <div class="github-stats-container">
+                    <img src="https://github-readme-stats.vercel.app/api?username=T9Tuco&show_icons=true&theme=dark&border_color=2c2c2c&bg_color=1e1e1e&text_color=e0e0e0&title_color=3d8bfd&icon_color=3d8bfd" alt="T9Tuco's GitHub Stats"/>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 TucoT9</p>
+        </footer>
+
     </div>
-
-    <div class="project-box">
-        <h4>[NexusNG]</h4>
-        <p>
-            Ein fortschrittlicher KI-Assistent, der entwickelt wurde, um den Softwareentwicklungs-Workflow mithilfe modernster Natural Language Processing und Machine Learning zu optimieren.
-        </p>
-        <p><b>Links:</b> <a href="https://nexusng.site/">Website</a> │ <a href="https://nexusng.de/">Chat App</a></p>
-    </div>
-
-    <div class="project-box">
-        <h4>[SignalVoid]</h4>
-        <p>
-            Ein Open-Source-Hardwareprojekt zur Schaffung eines vielseitigen, tragbaren Werkzeugs für die Sicherheitsforschung. SignalVoid wurde mit benutzerdefinierter Hardware und Firmware entwickelt, um erweiterte Funktionen in der Hochfrequenzanalyse, RFID/NFC-Interaktion und Infrarotkommunikation innerhalb einer erweiterbaren Plattform bereitzustellen.
-        </p>
-        <p><b>Link:</b> <a href="https://signalvoid.org/">Website</a></p>
-    </div>
-
-    <img src="https://www.cameronsworld.net/img/content/8/9.gif" alt="Flaming HR" width="100%">
-
-    <h3>>> My L33T Tech Stack_</h3>
-    <center>
-        <p><strong>Languages:</strong><br>
-          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-          <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java"/>
-          <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"/>
-        </p>
-        <p><strong>Frontend:</strong><br>
-          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
-          <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js"/>
-          <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-        </p>
-        <p><strong>Backend:</strong><br>
-          <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
-          <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
-          <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-          <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot"/>
-        </p>
-        <p><strong>AI & Machine Learning:</strong><br>
-          <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
-          <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
-          <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
-        </p>
-        <p><strong>DevOps & Cloud:</strong><br>
-          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-          <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-          <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
-          <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
-        </p>
-        <p><strong>OS & Cybersecurity Tools:</strong><br>
-          <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux"/>
-          <img src="https://img.shields.io/badge/Metasploit-E34F26?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit"/>
-          <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burp-suite&logoColor=white" alt="Burp Suite"/>
-          <img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP"/>
-        </p>
-    </center>
-    
-    <hr>
-
-    <h3>>> Connect With Me_</h3>
-    <center>
-        <p>
-          <a href="https://github.com/T9Tuco">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-          </a>
-          <a href="https://discord.com/users/718832241127718915">
-            <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
-          </a>
-          <a href="https://tucot9.com/">
-            <img src="https://img.shields.io/badge/Website-4c566a?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/>
-          </a>
-        </p>
-        <img src="https://cyber.dabamos.de/88x31/inetsuxx.gif" alt="Internet Sux">
-    </center>
-    
-    <hr>
-    
-    <h3>>> GitHub Stats_</h3>
-    <center>
-      <img src="https://github-readme-stats.vercel.app/api?username=T9Tuco&show_icons=true&theme=nord&border_color=4c566a&hide_border=false&border_radius=0&cache_seconds=3600" alt="T9Tuco's GitHub Stats"/>
-    </center>
-
-    <hr>
-    <center>
-        <p>Site under construction</p>
-        <img src="https://gifcities.org/assets/img/construction/14.gif" alt="Under Construction">
-        <br>
-        <img src="https://cyber.dabamos.de/88x31/ie_logo.gif" alt="Best viewed with IE">
-        <img src="https://cyber.dabamos.de/88x31/netscape.gif" alt="Best viewed with Netscape">
-    </center>
-
-</div>
 
 </body>
 </html>
